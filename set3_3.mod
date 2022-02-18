@@ -12,6 +12,7 @@ parameters beta,
     rho_i,
     e;
 
+
 rho = 0.02;
 rho_r = 0.85;
 sigma = 2;
