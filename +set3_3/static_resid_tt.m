@@ -13,8 +13,7 @@ function T = static_resid_tt(T, y, x, params)
 %   T         [#temp variables by 1]  double   vector of temporary terms
 %
 
-assert(length(T) >= 1);
+assert(length(T) >= 0);
 
-T(1) = 1/params(2);
 
 end

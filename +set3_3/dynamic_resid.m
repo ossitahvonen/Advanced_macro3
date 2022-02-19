@@ -23,20 +23,20 @@ if T_flag
     T = set3_3.dynamic_resid_tt(T, y, x, params, steady_state, it_);
 end
 residual = zeros(5, 1);
-lhs = y(5);
-rhs = params(3)+params(8)*(y(1)-params(3))+x(it_, 1);
-residual(1) = lhs - rhs;
-lhs = y(2);
-rhs = params(1)*y(7)+params(4)*y(3);
-residual(2) = lhs - rhs;
-lhs = y(3);
-rhs = y(8)-T(1)*(y(7)+y(4)-y(5));
-residual(3) = lhs - rhs;
-lhs = y(4);
-rhs = params(3)+y(2)*params(6);
-residual(4) = lhs - rhs;
 lhs = y(6);
-rhs = params(4)*(-0.5)*y(8)^2+y(2)*params(10);
+rhs = params(3)+params(8)*(y(2)-params(3))+x(it_, 1);
+residual(1) = lhs - rhs;
+lhs = y(3);
+rhs = params(1)*y(8)+params(4)*y(4);
+residual(2) = lhs - rhs;
+lhs = y(4);
+rhs = y(9)-1/params(2)*(y(5)-y(8)-y(6));
+residual(3) = lhs - rhs;
+lhs = y(5);
+rhs = params(3)+params(6)*(y(3)+y(1))/2;
+residual(4) = lhs - rhs;
+lhs = y(7);
+rhs = params(4)*(-0.5)*y(9)^2+y(3)*params(10);
 residual(5) = lhs - rhs;
 
 end

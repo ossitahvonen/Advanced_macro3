@@ -1,3 +1,6 @@
+%remember to do 
+%addpath C:\dynare\5.0\matlab
+
 var pi, y_tilde, i, r_n, W;
 varexo eps;
 
@@ -31,11 +34,11 @@ model;
     %phillips curve
     pi = beta*pi(+1) + kappa*y_tilde;
     %output gap/?? -rule
-    y_tilde = y_tilde(+1)-(1/sigma) * (i + pi(+1) - r_n);
+    y_tilde = y_tilde(+1)-(1/sigma) * (i - pi(+1) - r_n);
 
 
     %mon policy rule No 1
-    i = rho + phi_pi*pi;
+    %i = rho + phi_pi*pi;
 
     %mon policy rule No 2
     %i=rho + phi_pi*pi(+1);
@@ -44,11 +47,15 @@ model;
     %i = (1-rho_i) * (rho + phi_pi * pi(+1)) + rho_i * i(-1);
 
     %mon policy rule No 4
-    %i = rho + phi_pi*(pi + pi(-1))/2;
+    i = rho + phi_pi*(pi + pi(-1))/2;
 
     %welfare criterion:   
     W = (-1/2)*kappa*(y_tilde(+1)^2) + e*pi;
 
+
+    %why do all mon policies except (c) produce the same steady state? weird since it
+    %affects y and then y affects pi
+    %not sure what the intuition for the differences should be
 end;
 
 initval;

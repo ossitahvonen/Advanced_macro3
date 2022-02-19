@@ -119,19 +119,19 @@ M_.orig_maximum_lag = 1;
 M_.orig_maximum_lead = 1;
 M_.orig_maximum_lag_with_diffs_expanded = 1;
 M_.lead_lag_incidence = [
- 0 2 7;
- 0 3 8;
- 0 4 0;
- 1 5 0;
- 0 6 0;]';
+ 1 3 8;
+ 0 4 9;
+ 0 5 0;
+ 2 6 0;
+ 0 7 0;]';
 M_.nstatic = 2;
-M_.nfwrd   = 2;
+M_.nfwrd   = 1;
 M_.npred   = 1;
-M_.nboth   = 0;
+M_.nboth   = 1;
 M_.nsfwrd   = 2;
-M_.nspred   = 1;
+M_.nspred   = 2;
 M_.ndynamic   = 3;
-M_.dynamic_tmp_nbr = [1; 0; 0; 0; ];
+M_.dynamic_tmp_nbr = [0; 0; 0; 0; ];
 M_.model_local_variables_dynamic_tt_idxs = {
 };
 M_.equations_tags = {
@@ -149,7 +149,7 @@ M_.mapping.W.eqidx = [5 ];
 M_.mapping.eps.eqidx = [1 ];
 M_.static_and_dynamic_models_differ = false;
 M_.has_external_function = false;
-M_.state_var = [4 ];
+M_.state_var = [1 4 ];
 M_.exo_names_orig_ord = [1:1];
 M_.maximum_lag = 1;
 M_.maximum_lead = 1;
@@ -161,8 +161,8 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(1, 1);
 M_.params = NaN(10, 1);
 M_.endo_trends = struct('deflator', cell(5, 1), 'log_deflator', cell(5, 1), 'growth_factor', cell(5, 1), 'log_growth_factor', cell(5, 1));
-M_.NNZDerivatives = [16; 1; -1; ];
-M_.static_tmp_nbr = [1; 0; 0; 0; ];
+M_.NNZDerivatives = [17; 1; -1; ];
+M_.static_tmp_nbr = [0; 0; 0; 0; ];
 M_.model_local_variables_static_tt_idxs = {
 };
 M_.params(3) = 0.02;

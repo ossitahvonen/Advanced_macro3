@@ -27,7 +27,7 @@ g2_j = zeros(1,1);
 g2_v = zeros(1,1);
 
 g2_i(1)=5;
-g2_j(1)=71;
+g2_j(1)=89;
 g2_v(1)=(-(2*params(4)*(-0.5)));
-g2 = sparse(g2_i,g2_j,g2_v,5,81);
+g2 = sparse(g2_i,g2_j,g2_v,5,100);
 end
