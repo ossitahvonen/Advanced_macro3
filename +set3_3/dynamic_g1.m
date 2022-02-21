@@ -22,23 +22,22 @@ function g1 = dynamic_g1(T, y, x, params, steady_state, it_, T_flag)
 if T_flag
     T = set3_3.dynamic_g1_tt(T, y, x, params, steady_state, it_);
 end
-g1 = zeros(5, 10);
-g1(1,2)=(-params(8));
-g1(1,6)=1;
-g1(1,10)=(-1);
-g1(2,3)=1;
-g1(2,8)=(-params(1));
-g1(2,4)=(-params(4));
-g1(3,8)=(-(1/params(2)));
-g1(3,4)=1;
-g1(3,9)=(-1);
-g1(3,5)=1/params(2);
-g1(3,6)=(-(1/params(2)));
-g1(4,1)=(-(params(6)/2));
-g1(4,3)=(-(params(6)/2));
-g1(4,5)=1;
-g1(5,3)=(-params(10));
-g1(5,9)=(-(params(4)*(-0.5)*2*y(9)));
-g1(5,7)=1;
+g1 = zeros(5, 9);
+g1(1,1)=(-params(8));
+g1(1,5)=1;
+g1(1,9)=(-1);
+g1(2,2)=1;
+g1(2,7)=(-params(1));
+g1(2,3)=(-params(4));
+g1(3,7)=(-(1/params(2)));
+g1(3,3)=1;
+g1(3,8)=(-1);
+g1(3,4)=1/params(2);
+g1(3,5)=(-(1/params(2)));
+g1(4,7)=(-params(6));
+g1(4,4)=1;
+g1(5,2)=(-params(10));
+g1(5,8)=(-(params(4)*(-0.5)*2*y(8)));
+g1(5,6)=1;
 
 end

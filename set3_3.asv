@@ -1,8 +1,6 @@
 %remember to do 
 %addpath C:\dynare\5.0\matlab
 
-%on mac "addpath /Applications/Dynare/5.0/matlab"
-
 var pi, y_tilde, i, r_n, W;
 varexo eps;
 
@@ -18,12 +16,11 @@ parameters beta,
     e;
 
 
+rho = 0.;
 rho_r = 0.85;
 sigma = 2;
 kappa = 0.1;
 beta = 1/(1.025^0.25);
-rho = -1*log(beta);
-%this corresponds to 0.0028
 sigma_r2 = 0.01;
 phi_pi = 1.5;
 M = 1.2;
@@ -44,16 +41,15 @@ model;
     %i = rho + phi_pi*pi;
 
     %mon policy rule No 2
-    i=rho + phi_pi*pi(+1);
+    %i=rho + phi_pi*pi(+1);
 
     %mon policy rule No 3
     %i = (1-rho_i) * (rho + phi_pi * pi(+1)) + rho_i * i(-1);
 
     %mon policy rule No 4
-    %i = rho + phi_pi*(pi + pi(-1))/2;
+    i = rho + phi_pi*(pi + pi(-1))/2;
 
     %welfare criterion:   
-    %how to do the variance
     W = (-1/2)*kappa*(y_tilde(+1)^2) + e*pi;
 
 

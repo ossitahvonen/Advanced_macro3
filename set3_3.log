@@ -12,9 +12,9 @@ Preprocessing completed.
 
 STEADY-STATE RESULTS:
 
-pi      		 -2.42861e-17
-y_tilde 		 -1.4946e-18
-i       		 0.02
-r_n     		 0.02
-W       		 -1.45717e-16
+pi      		 8.67362e-18
+y_tilde 		 5.33786e-19
+i       		 0.00617315
+r_n     		 0.00617315
+W       		 5.20417e-17
 Total computing time : 0h00m00s
