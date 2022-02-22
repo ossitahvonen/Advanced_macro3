@@ -101,8 +101,6 @@ options_.linear = false;
 options_.block = false;
 options_.bytecode = false;
 options_.use_dll = false;
-M_.nonzero_hessian_eqs = 5;
-M_.hessian_eq_zero = isempty(M_.nonzero_hessian_eqs);
 M_.orig_eq_nbr = 5;
 M_.eq_nbr = 5;
 M_.ramsey_eq_nbr = 0;
@@ -119,18 +117,18 @@ M_.orig_maximum_lag = 1;
 M_.orig_maximum_lead = 1;
 M_.orig_maximum_lag_with_diffs_expanded = 1;
 M_.lead_lag_incidence = [
- 0 2 7;
  0 3 8;
- 0 4 0;
+ 0 4 9;
  1 5 0;
- 0 6 0;]';
-M_.nstatic = 2;
+ 2 6 0;
+ 0 7 0;]';
+M_.nstatic = 1;
 M_.nfwrd   = 2;
-M_.npred   = 1;
+M_.npred   = 2;
 M_.nboth   = 0;
 M_.nsfwrd   = 2;
-M_.nspred   = 1;
-M_.ndynamic   = 3;
+M_.nspred   = 2;
+M_.ndynamic   = 4;
 M_.dynamic_tmp_nbr = [0; 0; 0; 0; ];
 M_.model_local_variables_dynamic_tt_idxs = {
 };
@@ -149,7 +147,7 @@ M_.mapping.W.eqidx = [5 ];
 M_.mapping.eps.eqidx = [1 ];
 M_.static_and_dynamic_models_differ = false;
 M_.has_external_function = false;
-M_.state_var = [4 ];
+M_.state_var = [3 4 ];
 M_.exo_names_orig_ord = [1:1];
 M_.maximum_lag = 1;
 M_.maximum_lead = 1;
@@ -161,7 +159,7 @@ M_.maximum_exo_lead = 0;
 oo_.exo_steady_state = zeros(1, 1);
 M_.params = NaN(10, 1);
 M_.endo_trends = struct('deflator', cell(5, 1), 'log_deflator', cell(5, 1), 'growth_factor', cell(5, 1), 'log_growth_factor', cell(5, 1));
-M_.NNZDerivatives = [16; 1; -1; ];
+M_.NNZDerivatives = [17; -1; -1; ];
 M_.static_tmp_nbr = [0; 0; 0; 0; ];
 M_.model_local_variables_static_tt_idxs = {
 };
@@ -200,6 +198,14 @@ if M_.exo_det_nbr > 0
 	oo_.exo_det_simul = ones(M_.maximum_lag,1)*oo_.exo_det_steady_state';
 end
 steady;
+%
+% SHOCKS instructions
+%
+M_.exo_det_length = 0;
+M_.Sigma_e(1, 1) = (0.01)^2;
+options_.order = 1;
+var_list_ = {};
+[info, oo_, options_, M_] = stoch_simul(M_, options_, oo_, var_list_);
 
 
 oo_.time = toc(tic0);

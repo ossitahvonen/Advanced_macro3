@@ -22,12 +22,6 @@ function g2 = dynamic_g2(T, y, x, params, steady_state, it_, T_flag)
 if T_flag
     T = set3_3.dynamic_g2_tt(T, y, x, params, steady_state, it_);
 end
-g2_i = zeros(1,1);
-g2_j = zeros(1,1);
-g2_v = zeros(1,1);
+g2 = sparse([],[],[],5,100);
 
-g2_i(1)=5;
-g2_j(1)=71;
-g2_v(1)=(-(2*params(4)*(-0.5)));
-g2 = sparse(g2_i,g2_j,g2_v,5,81);
 end

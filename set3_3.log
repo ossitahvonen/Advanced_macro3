@@ -4,7 +4,7 @@ Starting preprocessing of the model file ...
 Found 5 equation(s).
 Evaluating expressions...done
 Computing static model derivatives (order 1).
-Computing dynamic model derivatives (order 2).
+Computing dynamic model derivatives (order 1).
 Processing outputs ...
 done
 Preprocessing completed.
@@ -12,9 +12,58 @@ Preprocessing completed.
 
 STEADY-STATE RESULTS:
 
-pi      		 8.67362e-18
-y_tilde 		 5.33786e-19
+pi      		 -2.94903e-17
+y_tilde 		 -1.81487e-18
 i       		 0.00617315
 r_n     		 0.00617315
-W       		 5.20417e-17
-Total computing time : 0h00m00s
+W       		 -1.76942e-16
+
+MODEL SUMMARY
+
+  Number of variables:         5
+  Number of stochastic shocks: 1
+  Number of state variables:   2
+  Number of jumpers:           2
+  Number of static variables:  1
+
+
+MATRIX OF COVARIANCE OF EXOGENOUS SHOCKS
+Variables         eps
+eps          0.000100
+
+POLICY AND TRANSITION FUNCTIONS
+                                  pi         y_tilde               i             r_n               W
+Constant                           0               0        0.006173        0.006173               0
+i(-1)                      -1.359256       -3.493602        0.747578               0       -8.155537
+r_n(-1)                     0.821452        2.450389        0.086997        0.850000        4.928714
+eps                         0.966414        2.882810        0.102350        1.000000        5.798487
+
+
+THEORETICAL MOMENTS
+VARIABLE         MEAN  STD. DEV.   VARIANCE
+pi            -0.0000     0.0135     0.0002
+y_tilde       -0.0000     0.0416     0.0017
+i              0.0062     0.0062     0.0000
+r_n            0.0062     0.0190     0.0004
+W             -0.0000     0.0808     0.0065
+
+
+
+MATRIX OF CORRELATIONS
+Variables         pi  y_tilde        i      r_n        W
+pi            1.0000   0.9970   0.5606   0.9045   1.0000
+y_tilde       0.9970   1.0000   0.6231   0.9349   0.9970
+i             0.5606   0.6231   1.0000   0.8602   0.5606
+r_n           0.9045   0.9349   0.8602   1.0000   0.9045
+W             1.0000   0.9970   0.5606   0.9045   1.0000
+
+
+
+COEFFICIENTS OF AUTOCORRELATION
+Order           1       2       3       4       5
+pi         0.6964  0.4772  0.3198  0.2076  0.1285
+y_tilde    0.7210  0.5164  0.3669  0.2579  0.1790
+i          0.9768  0.9251  0.8573  0.7817  0.7040
+r_n        0.8500  0.7225  0.6141  0.5220  0.4437
+W          0.6964  0.4772  0.3198  0.2076  0.1285
+Total computing time : 0h00m03s

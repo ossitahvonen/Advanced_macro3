@@ -44,10 +44,10 @@ model;
     %i = rho + phi_pi*pi;
 
     %mon policy rule No 2
-    i=rho + phi_pi*pi(+1);
+    %i=rho + phi_pi*pi(+1);
 
     %mon policy rule No 3
-    %i = (1-rho_i) * (rho + phi_pi * pi(+1)) + rho_i * i(-1);
+    i = (1-rho_i) * (rho + phi_pi * pi(+1)) + rho_i * i(-1);
 
     %mon policy rule No 4
     %i = rho + phi_pi*(pi + pi(-1))/2;
@@ -73,12 +73,12 @@ steady;
 %check;
 
 %irf
-%shocks;
-%    var eps;
-%    stderr 0.01;
-%end;
+shocks;
+    var eps;
+    stderr 0.01;
+end;
 
-%stoch_simul(order=1);
+stoch_simul(order=1);
 
 
 
